@@ -96,7 +96,7 @@ def adjustResultCoordinates(polys, ratio_w, ratio_h, ratio_net = 2):
 def get_result_img(image, score_text, score_link, text_threshold=0.68, link_threshold=0.4, low_text=0.08, ratio_w=1.0, ratio_h=1.0):
     boxes = getDetBoxes(score_text, score_link, text_threshold, link_threshold, low_text, s=False)
     boxes = adjustResultCoordinates(boxes, ratio_w, ratio_h)
-    file_utils.saveResult('/home/user4/ysx/text_image/text_image_char.jpg', image, boxes, dirname='/home/user4/ysx/text_image/')
+    file_utils.saveResult('/content/CRAFT-tensorflow/outputs/text_image_char.jpg', image, boxes, dirname='/home/user4/ysx/text_image/')
     boxes = getDetBoxes(score_text, score_link, text_threshold, link_threshold, low_text, s=True)
     boxes = adjustResultCoordinates(boxes, ratio_w, ratio_h)
-    file_utils.saveResult('/home/user4/ysx/text_image/text_image_word.jpg', image, boxes, dirname='/home/user4/ysx/text_image/')
+    file_utils.saveResult('/content/CRAFT-tensorflow/outputs/text_image_word.jpg', image, boxes, dirname='/home/user4/ysx/text_image/')

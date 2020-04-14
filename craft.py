@@ -35,8 +35,8 @@ def test(ckpt_path, img_path):
         res = cv2.resize(res, (512, 512))
         score_txt = res[:,:,0]
         score_link = res[:,:,1]
-        plt.imsave('/home/user4/ysx/CRAFT/result/weight.jpg', score_txt)
-        plt.imsave('/home/user4/ysx/CRAFT/result/weight_aff.jpg', score_link)
+        plt.imsave('/content/CRAFT-tensorflow/outputs/weight.jpg', score_txt)
+        plt.imsave('/content/CRAFT-tensorflow/outputs/weight_aff.jpg', score_link)
 
 
 def train(train=True):
@@ -114,5 +114,5 @@ def train(train=True):
                         saver.save(sess, "/home/user4/ysx/demo/CRAFT_%d.ckpt" %(global_step0))
 
 if __name__ == '__main__':
-    train(False)
-    # test('/home/user4/ysx/demo/CRAFT_214000.ckpt', '/home/user4/ysx/CRAFT/802.jpg')
+    #train(False)
+    test('/content/CRAFT-tensorflow/weights/checkpoint', '/content/CRAFT-tensorflow/image/image/t.jpg')
